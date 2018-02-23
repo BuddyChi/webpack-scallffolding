@@ -1,4 +1,5 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     devtool: 'source-map',
@@ -37,6 +38,9 @@ module.exports = {
         ]
     },
     plugins:[
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template:__dirname+"/app/index.tmp.html"
+        })
     ]
   }
